@@ -43,6 +43,9 @@
 
 ### Chapter 1 · Post-Training Essentials
 
+<details>
+<summary>Expand Chapter 1</summary>
+
 - **Definition**
   - A broad, functional definition that covers more than gradient updates:
     - Domain fine-tuning
@@ -89,7 +92,12 @@
   - **Practicality:** quantization, PEFT, distillation and serving.
     - Example: a 70B model needs 140 GB at FP16 but only ~35 GB at 4-bit.
 
+</details>
+
 ### Chapter 2 · Prerequisites: Before You Fine-Tune
+
+<details>
+<summary>Expand Chapter 2</summary>
 
 - **Should you fine-tune at all?**
   - Principle: use the **minimal intervention** that works. Exhaust prompting first.
@@ -146,11 +154,16 @@
     - Example: Llama restricts products above 700M monthly active users.
     - Review the license before investing.
 
+</details>
+
 ---
 
 ## Part II — The Tools
 
 ### Chapter 3 · Supervised Fine-Tuning (SFT)
+
+<details>
+<summary>Expand Chapter 3</summary>
 
 - **Mechanics**
   - **Objective:** next-token prediction (causal LM loss) on the desired outputs.
@@ -201,7 +214,12 @@
   - Gains taper roughly logarithmically as you add more data.
   - **Move to RL** when outputs are correct and well-formed but still lack the quality you want, and you can recognise that quality but can't write examples of it.
 
+</details>
+
 ### Chapter 4 · Reinforcement Learning (RLHF & PPO)
+
+<details>
+<summary>Expand Chapter 4</summary>
 
 - **Core idea:** people are better at **judging** outputs than **writing** them.
   - Cautionary example: the CoastRunners boat-racing agent circled a lagoon to farm points and never finished the race.
@@ -255,7 +273,12 @@
   - Helpful, honest, harmless behaviour
   - Downside: some sycophancy comes from preference data, i.e., people rewarding what they want to hear.
 
+</details>
+
 ### Chapter 5 · Preference Optimisation (Alternatives to PPO)
+
+<details>
+<summary>Expand Chapter 5</summary>
 
 - **DPO (Direct Preference Optimisation)**
   - Removes the separate reward model. The reward becomes *implicit* in the policy's log-probability ratios.
@@ -299,7 +322,12 @@
   - Iterative DPO
   - GRPO with synthetic or constitutional preferences
 
+</details>
+
 ### Chapter 6 · Evaluation Strategies
+
+<details>
+<summary>Expand Chapter 6</summary>
 
 - **Why evaluation is hard**
   - Outputs are open-ended.
@@ -343,11 +371,16 @@
   - **Divergence between metrics is the most important signal.**
   - Evaluation continues after deployment; it isn't a one-time gate.
 
+</details>
+
 ---
 
 ## Part III — The Craft
 
 ### Chapter 7 · Efficiency: Quantization & Compression
+
+<details>
+<summary>Expand Chapter 7</summary>
 
 - **Precision ladder:** each step down roughly halves memory.
   - Example: a 7B model takes 28 GB at FP32 → 14 GB at FP16 → 3.5 GB at 4-bit.
@@ -397,7 +430,12 @@
 - **Optimisation stack:** quantize → QLoRA-adapt → serve with batching and speculative decoding.
   - Efficiency also buys flexibility: you can adopt new base models faster.
 
+</details>
+
 ### Chapter 8 · Domain Adaptation
+
+<details>
+<summary>Expand Chapter 8</summary>
 
 - **The problem**
   - Models are "fluently clueless": confident but shallow outside general knowledge.
@@ -432,7 +470,12 @@
   - Roll out in stages: canary → shadow → expansion.
   - **Plan for decay:** a 2024 model becomes a 2026 legacy system. Rebase onto new models and refresh data regularly.
 
+</details>
+
 ### Chapter 9 · Agentic Models
+
+<details>
+<summary>Expand Chapter 9</summary>
 
 - **Tool calling is learned behaviour.** It breaks the model's normal token-by-token flow: generate a call → pause → take in the result.
   - **Four participants:** user, model, tool, execution environment (the harness registers tools with the model).
@@ -470,7 +513,12 @@
   - Red-team, including indirect prompt injection and multistep attacks.
   - Test robustness to variations seen in the wild.
 
+</details>
+
 ### Chapter 10 · Reasoning Capabilities
+
+<details>
+<summary>Expand Chapter 10</summary>
 
 - **Real vs. performed reasoning**
   - A chain of thought can be a rationalisation after the fact.
@@ -503,11 +551,16 @@
   - **Call a tool** for counting, exact retrieval and formal verification.
   - Open research: neurosymbolic methods, reliable self-verification.
 
+</details>
+
 ---
 
 ## Part IV — The Frontier
 
 ### Chapter 11 · Synthetic Training & Self-Play
+
+<details>
+<summary>Expand Chapter 11</summary>
 
 - **The only test that matters:** does the data improve the model? Where it came from is secondary.
 - **Generation strategies, simple to advanced**
@@ -541,7 +594,12 @@
   - **Model collapse** (Shumailov et al., *Nature* 2024): output diversity shrinks across generations.
 - **Rule:** use synthetic data for scale, but **keep a human-data reservoir as a distributional anchor.**
 
+</details>
+
 ### Chapter 12 · Multimodal Systems
+
+<details>
+<summary>Expand Chapter 12</summary>
 
 - **VLM architecture (the LLaVA skeleton):** vision encoder (ViT) → **projection layer** → LLM.
   - The projection layer matters most for post-training.
@@ -577,7 +635,12 @@
   - Text and image can contradict each other; consistency needs explicit training.
   - **New attack surfaces**, such as harmful instructions embedded in images.
 
+</details>
+
 ### Chapter 13 · Future Directions
+
+<details>
+<summary>Expand Chapter 13</summary>
 
 - **Emerging techniques**
 
@@ -601,6 +664,8 @@
   - Data quality > quantity
   - Evaluate against deployment needs, not benchmarks
   - Every decision is a trade-off; there are no universal optima
+
+</details>
 
 ---
 
