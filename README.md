@@ -4,7 +4,7 @@
 
 > **Book:** *The Craft of Post-Training: A Practical Guide for AI Engineers and Developers*
 > **Author:** Chris von Csefalvay (HCLTech AI Practice) · **Publisher:** No Starch Press, 2026 · 13 chapters, 4 parts
-> **Companion code:** <https://github.com/chrisvoncsefalvay/craft-of-post-training>
+> **Companion code:** <https://github.com/chrisvoncsefalvay/craft-of-post-training> ([rozeappletree's fork](https://github.com/rozeappletree/craft-of-post-training-notebooks))
 
 ---
 
